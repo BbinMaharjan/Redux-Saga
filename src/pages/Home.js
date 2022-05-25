@@ -3,7 +3,7 @@ import { Alert } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { getUser } from "../redux/action/user";
 
-const Home = () => {
+const Home = React.memo(() => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUser());
@@ -24,6 +24,6 @@ const Home = () => {
       )}
     </div>
   );
-};
+});
 
 export default Home;
