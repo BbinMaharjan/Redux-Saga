@@ -1,15 +1,15 @@
 import { SET_USER } from "../../utilities/constants/actionTypes";
 
 const initialState = {
-  user: [],
+  userList: [],
 };
 
-export default function UserReducer(state = initialState, action) {
+export default (state = initialState, action) => {
   switch (action.type) {
     case SET_USER:
       const { user } = action;
-      return { ...state, user };
+      return { ...state, userList: user };
     default:
       return state;
   }
-}
+};

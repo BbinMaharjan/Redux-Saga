@@ -8,7 +8,7 @@ const Home = React.memo(() => {
   useEffect(() => {
     dispatch(getUser());
   }, [dispatch]);
-  const user = useSelector((state) => state.user.user);
+  const user = useSelector((state) => state.user.userList);
   return (
     <div>
       {user && (
