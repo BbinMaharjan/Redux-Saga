@@ -1,10 +1,15 @@
 import "./App.css";
-import Home from "./pages/Home";
+import Header from "./components/organisms/header/Header";
+import ProtectedRoutes from "./routes";
 
 function App() {
   return (
-    <div className="container m-2">
-      <Home />
+    <div className="app">
+      <Header />
+      <div className="container p-6 mt-2">
+        <ProtectedRoutes />
+      </div>
+      ;
     </div>
   );
 }

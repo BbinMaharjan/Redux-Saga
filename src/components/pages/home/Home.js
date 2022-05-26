@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Alert } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { getUser } from "../redux/action/user";
+import { getUser } from "../../../redux/action/user";
 
-const Home = React.memo(() => {
+const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUser());
@@ -24,6 +24,6 @@ const Home = React.memo(() => {
       )}
     </div>
   );
-});
+};
 
 export default Home;
