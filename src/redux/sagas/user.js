@@ -1,8 +1,9 @@
-import { call, put } from "redux-saga/effects";
+import { call, put, takeLatest } from "redux-saga/effects";
 import { requestGetUser } from "../../utilities/apis/users";
+import { GET_USER } from "../../utilities/constants/actionTypes";
 import { setUser } from "../action/user";
 
-export function* handleGetUser(action) {
+function* handleGetUser(action) {
   try {
     const response = yield call(requestGetUser);
     const { data } = response;
@@ -10,4 +11,8 @@ export function* handleGetUser(action) {
   } catch (error) {
     console.log(error);
   }
+}
+
+export function* userSaga() {
+  yield takeLatest(GET_USER, handleGetUser);
 }
