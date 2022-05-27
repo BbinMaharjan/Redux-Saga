@@ -5,6 +5,7 @@ import RootReducer from "../reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 
 import { userSaga } from "../sagas/user";
+import postsSaga from "../sagas/postsSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -14,5 +15,6 @@ const store = createStore(
 );
 
 sagaMiddleware.run(userSaga);
+sagaMiddleware.run(postsSaga);
 
 export default store;

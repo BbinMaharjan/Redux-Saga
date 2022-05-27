@@ -6,3 +6,10 @@ export function requestGetUser() {
     url: "https://jsonplaceholder.typicode.com/users",
   });
 }
+
+export function requsetGetPosts() {
+  return axios.request({
+    method: "get",
+    url: "https://jsonplaceholder.typicode.com/posts",
+  });
+}
