@@ -5,7 +5,8 @@ import {
 
 const INIT_STATE = {
   loading: false,
-  postsList: [],
+  posts: [],
+  error: null,
 };
 
 export default (state = INIT_STATE, action) => {
@@ -17,11 +18,17 @@ export default (state = INIT_STATE, action) => {
       return {
         ...state,
         loading: false,
-        postsList: action.payload.postsList,
+        posts: action.payload.posts,
+        error: null,
       };
     }
     case POST_TYPES.POSTS_LIST + COMMON_TYPES.FAILURE: {
-      return { ...state, loading: false };
+      return {
+        ...state,
+        loading: false,
+        posts: [],
+        error: action.payload.error,
+      };
     }
     default:
       return state;

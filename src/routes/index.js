@@ -11,7 +11,7 @@ const ProtectedRoutes = () => {
       <Header />
       <div className="container p-6 mt-2">
         <Switch>
-          {/* <Route path="/" component={Home} /> */}
+          <Route exact path="/" component={Home} />
           <Route path="/posts" component={Posts} />
         </Switch>
       </div>
