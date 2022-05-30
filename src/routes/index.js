@@ -1,21 +1,22 @@
 import React from "react";
-import { Switch } from "react-router-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "../components/organisms/header/Header";
 import Home from "../components/pages/home/Home";
 import Posts from "../components/pages/posts/Posts";
 
 const ProtectedRoutes = () => {
   return (
-    <Router>
+    <BrowserRouter>
       <Header />
-      <div className="container p-6 mt-2">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/posts" component={Posts} />
-        </Switch>
+      <div className="container m-2">
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="home" element={<Home />} />
+          <Route path="posts" element={<Posts />} />
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 };
 
