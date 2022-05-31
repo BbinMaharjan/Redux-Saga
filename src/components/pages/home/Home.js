@@ -31,6 +31,8 @@ const Home = () => {
               Image={data.image}
               Title={data.title}
               Price={data.price}
+              Rate={data.rating.rate}
+              Count={data.rating.count}
             />
           );
         })
