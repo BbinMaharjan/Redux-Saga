@@ -1,15 +1,8 @@
 import axios from "axios";
 
-export function requestGetUser() {
+export function requestGetProducts() {
   return axios.request({
     method: "get",
-    url: "https://jsonplaceholder.typicode.com/users",
-  });
-}
-
-export function requestGetPosts() {
-  return axios.request({
-    method: "get",
-    url: "https://jsonplaceholder.typicode.com/posts",
+    url: "https://fakestoreapi.com/products",
   });
 }

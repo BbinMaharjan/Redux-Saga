@@ -4,8 +4,7 @@ import createSagaMiddleware from "redux-saga";
 import RootReducer from "../reducers";
 import { composeWithDevTools } from "redux-devtools-extension";
 
-import { userSaga } from "../sagas/user";
-import postsSaga from "../sagas/postsSaga";
+import productsSaga from "../sagas/productsSaga";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -14,7 +13,6 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(sagaMiddleware, logger))
 );
 
-sagaMiddleware.run(userSaga);
-sagaMiddleware.run(postsSaga);
+sagaMiddleware.run(productsSaga);
 
 export default store;
