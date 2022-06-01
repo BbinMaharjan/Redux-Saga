@@ -1,5 +1,5 @@
 import { put, takeLatest, call } from "redux-saga/effects";
-import { requestGetProducts } from "../../utilities/apis/users";
+import { requestGetProducts } from "../../utilities/apis/products";
 import {
   COMMON_TYPES,
   PRODUCT_TYPES,

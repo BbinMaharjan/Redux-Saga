@@ -1,25 +1,24 @@
 import React from "react";
-import { Card } from "react-bootstrap";
-import { FiStar, FiShoppingBag } from "react-icons/fi";
-import { BiMoney } from "react-icons/bi";
+
+import { Link } from "react-router-dom";
+
 const ProductCard = (props) => {
   return (
-    <div className="container m-2">
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" className="container p-2" src={props.Image} />
-        <Card.Body>
-          <Card.Title>{props.Title}</Card.Title>
-          <Card.Text>
-            $ {props.Price} <BiMoney color="green" />
-          </Card.Text>
-          <spam>
-            Rate : {props.Rate} <FiStar color="red" />
-          </spam>
-          <spam>
-            Count : {props.Count} <FiShoppingBag color="blue" />
-          </spam>
-        </Card.Body>
-      </Card>
+    <div className="four wide column">
+      <Link to={`/product/${props.Id}`}>
+        <div className="ui link cards">
+          <div className="card">
+            <div className="image">
+              <img src={props.Image} alt={props.Title} />
+            </div>
+            <div className="content">
+              <div className="header">{props.Title}</div>
+              <div className="meta price">$ {props.Price}</div>
+              <div className="meta">{props.Category}</div>
+            </div>
+          </div>
+        </div>
+      </Link>
     </div>
   );
 };

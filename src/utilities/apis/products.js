@@ -6,3 +6,10 @@ export function requestGetProducts() {
     url: "https://fakestoreapi.com/products",
   });
 }
+
+export function requestGetProductDetails(id) {
+  return axios.request({
+    method: "get",
+    url: `https://fakestoreapi.com/products/${id}`,
+  });
+}

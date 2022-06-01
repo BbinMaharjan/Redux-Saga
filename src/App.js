@@ -3,7 +3,7 @@ import ProtectedRoutes from "./routes";
 
 function App() {
   return (
-    <div className="app">
+    <div className="App">
       <ProtectedRoutes />
     </div>
   );

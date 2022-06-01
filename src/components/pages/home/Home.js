@@ -14,7 +14,7 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="ui grid container">
       {loading ? (
         <Spinner
           className="justify-content-center align-items-center"
@@ -26,14 +26,16 @@ const Home = () => {
       ) : (
         products?.map((data) => {
           return (
-            <ProductCard
-              key={data.id}
-              Image={data.image}
-              Title={data.title}
-              Price={data.price}
-              Rate={data.rating.rate}
-              Count={data.rating.count}
-            />
+            <div>
+              <ProductCard
+                key={data.id}
+                Id={data.id}
+                Image={data.image}
+                Title={data.title}
+                Price={data.price}
+                Category={data.category}
+              />
+            </div>
           );
         })
       )}
