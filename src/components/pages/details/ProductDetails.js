@@ -1,32 +1,33 @@
-import React, { useEffect, useState } from "react";
-import ProductDetail from "../../molecules/ProductDetails";
-import { axios } from "axios";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { requestGetProductDetails } from "../../../utilities/apis/products";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductDetailsRequest } from "../../../redux/action/products";
+import SingleProductPage from "../../molecules/SingleProductPage";
+import { Spinner } from "react-bootstrap";
 
 const ProductDetails = () => {
-  const [products, setProducts] = useState([]);
-  const id = useParams();
+  const { id } = useParams();
+  const dispatch = useDispatch();
 
-  const fetchProductDetail = async (id) => {
-    console.log("===", id);
-    const response = await requestGetProductDetails(id);
-    console.log("======", response);
-    setProducts(response.data);
-  };
+  const { productDetails, loading } = useSelector(
+    ({ productDetails }) => productDetails
+  );
+
   useEffect(() => {
-    fetchProductDetail(id);
-  }, [id]);
+    dispatch(getProductDetailsRequest(id));
+  }, [dispatch, id]);
 
   return (
     <div className="ui grid container">
-      <ProductDetail
-        Image={products.image}
-        Title={products.title}
-        Price={products.price}
-        Category={products.category}
-        Description={products.description}
-      />
+      {loading ? (
+        <Spinner
+          className="justify-content-center align-items-center"
+          animation="border"
+          variant="danger"
+        />
+      ) : (
+        <SingleProductPage data={productDetails} />
+      )}
     </div>
   );
 };

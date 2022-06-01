@@ -7,7 +7,7 @@ import ProductCard from "../../organisms/productCard/ProductCard";
 const Home = () => {
   const dispatch = useDispatch();
 
-  const { products, loading, error } = useSelector((state) => state.products);
+  const { products, loading, error } = useSelector(({ products }) => products);
 
   useEffect(() => {
     dispatch(getProductsRequest());
@@ -26,16 +26,14 @@ const Home = () => {
       ) : (
         products?.map((data) => {
           return (
-            <div>
-              <ProductCard
-                key={data.id}
-                Id={data.id}
-                Image={data.image}
-                Title={data.title}
-                Price={data.price}
-                Category={data.category}
-              />
-            </div>
+            <ProductCard
+              key={data.id}
+              Id={data.id}
+              Image={data.image}
+              Title={data.title}
+              Price={data.price}
+              Category={data.category}
+            />
           );
         })
       )}

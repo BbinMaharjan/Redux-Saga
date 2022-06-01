@@ -16,3 +16,18 @@ export const getProductsFailure = (payload) => ({
   type: PRODUCT_TYPES.PRODUCT_LIST + COMMON_TYPES.FAILURE,
   payload,
 });
+
+export const getProductDetailsRequest = (payload) => ({
+  type: PRODUCT_TYPES.PRODUCT_DETAILS + COMMON_TYPES.REQUEST,
+  payload,
+});
+
+export const getProductDetailsSuccess = (payload) => ({
+  type: PRODUCT_TYPES.PRODUCT_DETAILS + COMMON_TYPES.SUCCESS,
+  payload,
+});
+
+export const getProductDetailsFailure = (payload) => ({
+  type: PRODUCT_TYPES.PRODUCT_DETAILS + COMMON_TYPES.FAILURE,
+  payload,
+});

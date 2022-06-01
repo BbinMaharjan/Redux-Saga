@@ -7,9 +7,9 @@ export function requestGetProducts() {
   });
 }
 
-export function requestGetProductDetails(id) {
-  return axios.request({
-    method: "get",
-    url: `https://fakestoreapi.com/products/${id}`,
-  });
-}
+export const requestGetProductDetails = async (id) => {
+  const response = await axios
+    .get(`https://fakestoreapi.com/products/${id}`)
+    .then((response) => response.data);
+  return response;
+};

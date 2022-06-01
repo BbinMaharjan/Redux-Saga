@@ -12,4 +12,5 @@ export const COMMON_TYPES = {
 // Constant products action type
 export const PRODUCT_TYPES = {
   PRODUCT_LIST: "PRODUCT_LIST",
+  PRODUCT_DETAILS: "PRODUCT_DETAILS",
 };
