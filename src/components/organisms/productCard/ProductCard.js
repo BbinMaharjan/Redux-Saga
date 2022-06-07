@@ -2,7 +2,9 @@ import React from "react";
 
 import { Link } from "react-router-dom";
 
-import { BiLike } from "react-icons/bi";
+import { BiLike, BiCartAlt } from "react-icons/bi";
+import { AiOutlineStar } from "react-icons/ai";
+
 import "./productCard.css";
 
 const ProductCard = ({ data }) => {
@@ -15,10 +17,16 @@ const ProductCard = ({ data }) => {
           </Link>
         </div>
         <div>{data.title}</div>
+        <span className="container">
+          <strong>Category :</strong>
+          {data.category}
+        </span>
       </div>
-      <div className="container d-flex justify-content-between">
-        <strong>Price: $ {data.price}</strong>
-        <BiLike color="green" size="25" />
+      <strong className="container">Price: $ {data.price}</strong>
+      <div className="container d-flex justify-content-around m-2">
+        <BiLike color="green" size="20" />
+        <BiCartAlt color="green" size="20" />
+        <AiOutlineStar color="green" size="20" />
       </div>
     </div>
   );
