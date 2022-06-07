@@ -18,7 +18,7 @@ const ProductDetails = () => {
   }, [dispatch, id]);
 
   return (
-    <div className="ui grid container">
+    <div className="container justify-content-center align-items-center">
       {loading ? (
         <Spinner
           className="justify-content-center align-items-center"

@@ -16,31 +16,11 @@ const ProductCard = ({ data }) => {
         </div>
         <div>{data.title}</div>
       </div>
-      <div className="card-lower">
-        <div>Price: $ {data.price}</div>
-        <div className="card-button-container">
-          <button className="card-add-to-cart-btn">Add to Cart</button>
-          <BiLike color="green" size="25" />
-        </div>
+      <div className="container d-flex justify-content-between">
+        <strong>Price: $ {data.price}</strong>
+        <BiLike color="green" size="25" />
       </div>
     </div>
-
-    // <div className="four wide column">
-    //   <Link to={`/product/${data.Id}`}>
-    //     <div className="ui link cards">
-    //       <div className="card">
-    //         <div className="image">
-    //           <img src={data.Image} alt={data.Title} />
-    //         </div>
-    //         <div className="content">
-    //           <div className="header">{data.Title}</div>
-    //           <div className="meta price">$ {data.Price}</div>
-    //           <div className="meta">{data.Category}</div>
-    //         </div>
-    //       </div>
-    //     </div>
-    //   </Link>
-    // </div>
   );
 };
 

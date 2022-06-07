@@ -1,31 +1,18 @@
 import React from "react";
+import { Card, Button } from "react-bootstrap";
 
 const SingleProductPage = ({ data }) => {
   return (
-    <div className="ui placeholder segment">
-      <div className="ui two column stackable center aligned grid">
-        <div className="ui vertical divider">AND</div>
-        <div className="middle aligned row">
-          <div className="column lp">
-            <img className="ui fluid image" src={data.image} />
-          </div>
-          <div className="column rp">
-            <h1>{data.title}</h1>
-            <h2>
-              <a className="ui teal tag label">${data.price}</a>
-            </h2>
-            <h3 className="ui brown block header">{data.category}</h3>
-            <p>{data.description}</p>
-            <div className="ui vertical animated button" tabIndex="0">
-              <div className="hidden content">
-                <i className="shop icon"></i>
-              </div>
-              <div className="visible content">Add to Cart</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Card style={{ width: "18rem" }}>
+      <Card.Img variant="top" src={data.image} />
+      <Card.Body>
+        <Card.Title>{data.title}</Card.Title>
+        <spam>{data.category}</spam>
+        <Card.Text>{data.description}</Card.Text>
+        <strong> Price : $ {data.price}</strong>
+      </Card.Body>
+      <Button variant="primary">Add To Cart</Button>
+    </Card>
   );
 };
 
