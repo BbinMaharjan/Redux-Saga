@@ -24,9 +24,9 @@ const Home = () => {
       ) : error ? (
         <div>Error</div>
       ) : (
-        products?.map((data) => {
+        products?.map((data, index) => {
           return (
-            <div className="m-2">
+            <div className="m-2" key={index}>
               <ProductCard data={data} />
             </div>
           );

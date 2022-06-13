@@ -9,9 +9,7 @@ const ProductDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
 
-  const { productDetails, loading } = useSelector(
-    ({ productDetails }) => productDetails
-  );
+  const { productDetails, loading } = useSelector(({ products }) => products);
 
   useEffect(() => {
     dispatch(getProductDetailsRequest(id));

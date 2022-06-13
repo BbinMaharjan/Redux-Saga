@@ -31,13 +31,6 @@ export const Products = (state = INIT_STATE, action) => {
         error: action.payload.error,
       };
     }
-    default:
-      return state;
-  }
-};
-
-export const ProductDetails = (state = INIT_STATE, action) => {
-  switch (action.type) {
     case PRODUCT_TYPES.PRODUCT_DETAILS + COMMON_TYPES.REQUEST: {
       return { ...state, loading: true };
     }
@@ -52,6 +45,7 @@ export const ProductDetails = (state = INIT_STATE, action) => {
       return {
         ...state,
         loading: false,
+        productDetails: [],
         error: action.payload.error,
       };
     }
